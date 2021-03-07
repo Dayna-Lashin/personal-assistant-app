@@ -1,0 +1,9 @@
+[tool]
+[tool.poetry]
+authors = ["Your Name <you@example.com>"]
+description = "Personal Assistant App"
+name = "base_app"
+version = "0.0.0"
+[tool.poetry.dependencies]
+python = "^3.8"
+remi = "^2020.3.10"
