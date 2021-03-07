@@ -1,5 +1,6 @@
 class PersonalAssistant:
   def __init__(self, todos):
+
     # Contacts dictionary
     self.contacts = {
       'Ann': 'Marketing Coordinator',
@@ -7,6 +8,7 @@ class PersonalAssistant:
       'Nichole': 'Sales Representative',
       'Max': 'Technical Writer'
     }
+
     # Birthdays dictionary
     self.birthdays = {
       "Midge": "02/24/18",
@@ -14,42 +16,43 @@ class PersonalAssistant:
       "Sammy": "05/15/17",
       "Ollie": "10/11/18"
     }
+
     # To-do list
     self.todos = todos
 
-  # Gets a contact from dictionary
+  # Get a contact from dictionary
   def get_contact(self, name):
     if name in self.contacts:
       return self.contacts[name]
     else:
       return "No Contact Found."
 
-  # Adds contact to dictionary
+  # Add contact to dictionary
   def add_contact(self, name, position):
     if name in self.contacts:
       return "Contact already exists."
     else:
       self.contacts[name] = position
 
-  # Removes contact from dictionary
+  # Remove contact from dictionary
   def remove_contact(self, name):
     if name in self.contacts:
       self.contacts.pop(name, None)
     else:
       return "No Contact Found."
 
-  # Gets to-do list
+  # Get to-do list
   def get_todo(self):
     return self.todos
 
-  # Adds a to-do to the list
+  # Add a to-do to the list
   def add_todo(self, new_item):
-    ## if new_item in self.todos:
-      ## return "To-do is already on the list."
-    ##else:
-    self.todos.append(new_item)
+    if new_item in self.todos and new_item != "":
+      return "To-do is already on the list."
+    else:
+      self.todos.append(new_item)
 
-  # Removes a to-do from the list
+  # Remove a to-do from the list
   def remove_todo(self, todo_item):
     # Checks if todo_item is in todos list
     if todo_item in self.todos:
@@ -60,21 +63,21 @@ class PersonalAssistant:
     else:
       return "To-do is not in list."
 
-  # Gets a birthday from the dictionary
+  # Get a birthday from the dictionary
   def get_birthday(self, name):
     if name in self.birthdays:
       return self.birthdays[name]
     else:
       return "No birthday found."
 
-  # Adds a birthday to the dictionary
+  # Add a birthday to the dictionary
   def add_birthday(self, name, birthday):
     if name in self.birthdays:
       return "This birthday is already saved."
     else:
       self.birthdays[name] = birthday
 
-  # Removed a birthday from the dictionary
+  # Remove a birthday from the dictionary
   def remove_birthday(self, name):
     if name in self.birthdays:
       self.birthdays.pop(name)
